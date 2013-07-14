@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wor
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.5
-Stable tag: 1.0
+Tested up to: 3.6
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -50,10 +50,22 @@ Q5. What is Group 1, Group 2 in the widget control?
 
 = 1.0 =		
 			
-First version		
+First version
+
+= 2.0 =	
+
+Tested up to 3.6
+Added few security features.
+New admin layout.		
 
 == Changelog ==
 
 = 1.0 =		
 			
 First version
+
+= 2.0 =	
+
+Tested up to 3.6
+Added few security features.
+New admin layout.

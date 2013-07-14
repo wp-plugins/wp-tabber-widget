@@ -37,8 +37,8 @@ function gtabber_delete(id)
 {
 	if(confirm("Do you want to delete this record?"))
 	{
-		document.frm_tabber_display.action="options-general.php?page=wp-tabber-widget/wp-tabber-widget.php&AC=DEL&DID="+id;
-		document.frm_tabber_display.submit();
+		document.frm_gtabber_display.action="options-general.php?page=wp-tabber-widget&ac=del&did="+id;
+		document.frm_gtabber_display.submit();
 	}
 }	
 
@@ -56,7 +56,7 @@ function gtabber_group_load(val)
 
 function gtabber_redirect()
 {
-	window.location = "options-general.php?page=wp-tabber-widget/wp-tabber-widget.php";
+	window.location = "options-general.php?page=wp-tabber-widget";
 }
 
 function gtabber_help()

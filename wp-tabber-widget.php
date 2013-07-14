@@ -3,7 +3,7 @@
 Plugin Name: Wp tabber widget
 Description: This is a jquery based lightweight plugin to create tab in the wordpress widget.
 Author: Gopi.R
-Version: 1.0
+Version: 2.0
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Donate link: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
@@ -13,6 +13,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("GTabberTable", $wpdb->prefix . "gtabber");
+define("WP_gtabber_UNIQUE_NAME", "wp-tabber-widget");
+define("WP_gtabber_TITLE", "Wp tabber widget");
+define('WP_gtabber_FAV', 'http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/');
+define('WP_gtabber_LINK', 'Check official website for more information <a target="_blank" href="'.WP_gtabber_FAV.'">click here</a>');
 
 // Main method to load tabber widget
 function GTabber()
@@ -23,7 +27,7 @@ function GTabber()
 	
 	if($gtabber_left == "" && $gtabber_right == "")
 	{
-		echo 'Tabber widget: Please enter proper value<br /><br />';
+		echo 'Tabber widget: Please enter correct group value<br /><br />';
 		return;
 	}
 	
@@ -43,7 +47,6 @@ function GTabber()
 	{
 		$sSql = $sSql . " and (`gtabber_group` = '".$gtabber_right."' or `gtabber_group` = '".$gtabber_left."')";
 	}
-	//echo $sSql;
 	$data = $wpdb->get_results($sSql);
 	$left = "";
 	$right = "";
@@ -83,8 +86,8 @@ function GTabber()
 		?>
 		<div id="GTabberTabber">
 		  <ul class="GTabberTabs">
-			<li><a href="#GTabberLeft"><?php echo $gtabber_left; ?></a></li>
-			<li><a href="#GTabberRight"><?php echo $gtabber_right; ?></a></li>
+			<li><a href="#GTabberLeft"><?php echo stripslashes($gtabber_left); ?></a></li>
+			<li><a href="#GTabberRight"><?php echo stripslashes($gtabber_right); ?></a></li>
 		  </ul>
 		  <!--end .GTabberTabs-->
 		  <div class="clear"></div>
@@ -155,7 +158,24 @@ function GTabber_deactivation()
 /*Admin tabber text management*/
 function GTabber_admin()
 {
-	include_once("content-management.php");
+	//include_once("content-management.php");
+	global $wpdb;
+	$current_page = isset($_GET['ac']) ? $_GET['ac'] : '';
+	switch($current_page)
+	{
+		case 'edit':
+			include('pages/content-edit.php');
+			break;
+		case 'add':
+			include('pages/content-add.php');
+			break;
+		case 'set':
+			include('pages/content-setting.php');
+			break;
+		default:
+			include('pages/content-show.php');
+			break;
+	}
 }
 
 /*Admin menu options*/
@@ -163,7 +183,7 @@ function GTabber_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page('Wp tabber widget', 'Wp tabber widget', 'manage_options', __FILE__, 'GTabber_admin' );
+		add_options_page('Wp tabber widget', 'Wp tabber widget', 'manage_options', 'wp-tabber-widget', 'GTabber_admin' );
 	}
 }
 
