@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wor
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.6
-Stable tag: 2.0
+Tested up to: 3.8
+Stable tag: 2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -44,7 +44,9 @@ Q5. What is Group 1, Group 2 in the widget control?
 
 == Screenshots ==
 
-1. http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
+1. Front Screen. http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
+
+2. Admin Screen. http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 
 == Upgrade Notice ==
 
@@ -56,7 +58,13 @@ First version
 
 Tested up to 3.6
 Added few security features.
-New admin layout.		
+New admin layout.
+
+= 2.1 =	
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (wp-tabber-widget.po) available in the languages folder.	
 
 == Changelog ==
 
@@ -69,3 +77,9 @@ First version
 Tested up to 3.6
 Added few security features.
 New admin layout.
+
+= 2.1 =	
+
+1. Tested up to 3.8
+2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
+Plugin *.po file (wp-tabber-widget.po) available in the languages folder.

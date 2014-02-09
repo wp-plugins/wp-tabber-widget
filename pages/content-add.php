@@ -22,14 +22,14 @@ if (isset($_POST['gtabber_form_submit']) && $_POST['gtabber_form_submit'] == 'ye
 	$form['gtabber_text'] = isset($_POST['gtabber_text']) ? $_POST['gtabber_text'] : '';
 	if ($form['gtabber_text'] == '')
 	{
-		$gtabber_errors[] = __('Please enter tabber text.', gtabber_UNIQUE_NAME);
+		$gtabber_errors[] = __('Please enter tabber text.', 'wp-tabber-widget');
 		$gtabber_error_found = TRUE;
 	}	
 	$form['gtabber_link'] = isset($_POST['gtabber_link']) ? $_POST['gtabber_link'] : '';
 	$form['gtabber_group'] = isset($_POST['gtabber_group']) ? $_POST['gtabber_group'] : '';
 	if ($form['gtabber_group'] == '')
 	{
-		$gtabber_errors[] = __('Please select existing group (or) enter new tabber group.', gtabber_UNIQUE_NAME);
+		$gtabber_errors[] = __('Please select existing group (or) enter new tabber group.', 'wp-tabber-widget');
 		$gtabber_error_found = TRUE;
 	}
 	$form['gtabber_target'] = isset($_POST['gtabber_target']) ? $_POST['gtabber_target'] : '';
@@ -45,7 +45,7 @@ if (isset($_POST['gtabber_form_submit']) && $_POST['gtabber_form_submit'] == 'ye
 		);
 		$wpdb->query($sql);
 		
-		$gtabber_success = __('New details was successfully added.', gtabber_UNIQUE_NAME);
+		$gtabber_success = __('New details was successfully added.', 'wp-tabber-widget');
 		
 		// Reset the form fields
 		$form = array(
@@ -70,23 +70,24 @@ if ($gtabber_error_found == FALSE && strlen($gtabber_success) > 0)
 {
 	?>
 	<div class="updated fade">
-		<p><strong><?php echo $gtabber_success; ?> <a href="<?php echo get_option('siteurl'); ?>/wp-admin/options-general.php?page=wp-tabber-widget">Click here</a> to view the details</strong></p>
+		<p><strong><?php echo $gtabber_success; ?> 
+		<a href="<?php echo WP_gtabber_ADMIN_URL; ?>"><?php _e('Click here to view the details', 'wp-tabber-widget'); ?></a></strong></p>
 	</div>
 	<?php
 }
 ?>
-<script language="JavaScript" src="<?php echo get_option('siteurl'); ?>/wp-content/plugins/wp-tabber-widget/pages/setting.js"></script>
+<script language="JavaScript" src="<?php echo WP_gtabber_PLUGIN_URL; ?>/pages/setting.js"></script>
 <div class="form-wrap">
 	<div id="icon-edit" class="icon32 icon32-posts-post"><br></div>
-	<h2><?php echo WP_gtabber_TITLE; ?></h2>
+	<h2><?php _e('Wp tabber widget', 'wp-tabber-widget'); ?></h2>
 	<form name="gtabber_form" method="post" action="#" onsubmit="return gtabber_submit()"  >
-      <h3>Add details</h3>
+      <h3><?php _e('Add details', 'wp-tabber-widget'); ?></h3>
       
-		<label for="tag-title">Tabber group</label>
+		<label for="tag-title"><?php _e('Tabber group', 'wp-tabber-widget'); ?></label>
 		<select style="width:190px;" name="gtabber_group_drop" id="gtabber_group_drop" onchange="gtabber_group_load(this.value)">
-		<option value=''>Please select (or) enter new</option>
+		<option value=''><?php _e('Please select (or) enter new', 'wp-tabber-widget'); ?></option>
 		<?php
-		$data = $wpdb->get_results("SELECT distinct gtabber_group FROM wp_gtabber");
+		$data = $wpdb->get_results("SELECT distinct gtabber_group FROM ".GTabberTable);
 		if ( !empty($data) ) 
         {
 			foreach ( $data as $data ) 
@@ -99,34 +100,37 @@ if ($gtabber_error_found == FALSE && strlen($gtabber_success) > 0)
 		?>
 		</select>
 		<input name="gtabber_group" type="text" id="gtabber_group" value="" maxlength="25" size="30" /></td>
-		<p>Select existing group (or) enter new tabber group</p>
+		<p><?php _e('Select existing group (or) enter new tabber group', 'wp-tabber-widget'); ?></p>
 		
-		<label for="tag-title">Tabber text</label>
+		<label for="tag-title"><?php _e('Tabber text', 'wp-tabber-widget'); ?></label>
 		<input name="gtabber_text" type="text" id="gtabber_text" value="" maxlength="250" size="120" />
-		<p>Please enter your tabber content.</p>
+		<p><?php _e('Please enter your tabber content.', 'wp-tabber-widget'); ?></p>
 		
-		<label for="tag-title">Link</label>
+		<label for="tag-title"><?php _e('Link', 'wp-tabber-widget'); ?></label>
 		<input name="gtabber_link" type="text" id="gtabber_link" value="" size="120" />
-		<p>When someone clicks on the message, where do you want to send them.</p>
+		<p><?php _e('When someone clicks on the message, where do you want to send them.', 'wp-tabber-widget'); ?></p>
 		
-		<label for="tag-title">Target</label>
+		<label for="tag-title"><?php _e('Target', 'wp-tabber-widget'); ?></label>
 		<select name="gtabber_target" id="gtabber_target">
             <option value='_blank'>_blank</option>
             <option value='_parent'>_parent</option>
             <option value='_self'>_self</option>
             <option value='_top'>_top</option>
           </select>
-		 <p>Do you want to open link in new window?</p>
+		 <p><?php _e('Do you want to open link in new window?', 'wp-tabber-widget'); ?></p>
 	  	  
       <input name="gtabber_id" id="gtabber_id" type="hidden" value="">
       <input type="hidden" name="gtabber_form_submit" value="yes"/>
       <p class="submit">
-        <input name="publish" lang="publish" class="button add-new-h2" value="Insert Details" type="submit" />&nbsp;
-        <input name="publish" lang="publish" class="button add-new-h2" onclick="gtabber_redirect()" value="Cancel" type="button" />&nbsp;
-        <input name="Help" lang="publish" class="button add-new-h2" onclick="gtabber_help()" value="Help" type="button" />
+        <input name="publish" lang="publish" class="button add-new-h2" value="<?php _e('Insert Details', 'wp-tabber-widget'); ?>" type="submit" />&nbsp;
+        <input name="publish" lang="publish" class="button add-new-h2" onclick="gtabber_redirect()" value="<?php _e('Cancel', 'wp-tabber-widget'); ?>" type="button" />&nbsp;
+        <input name="Help" lang="publish" class="button add-new-h2" onclick="gtabber_help()" value="<?php _e('Help', 'wp-tabber-widget'); ?>" type="button" />
       </p>
 	  <?php wp_nonce_field('gtabber_form_add'); ?>
     </form>
 </div>
-<p class="description"><?php echo WP_gtabber_LINK; ?></p>
+<p class="description">
+	<?php _e('Check official website for more information', 'wp-tabber-widget'); ?>
+	<a target="_blank" href="<?php echo WP_gtabber_FAV; ?>"><?php _e('click here', 'wp-tabber-widget'); ?></a>
+</p>
 </div>

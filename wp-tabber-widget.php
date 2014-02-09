@@ -3,7 +3,7 @@
 Plugin Name: Wp tabber widget
 Description: This is a jquery based lightweight plugin to create tab in the wordpress widget.
 Author: Gopi.R
-Version: 2.0
+Version: 2.1
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Donate link: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
@@ -13,10 +13,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 global $wpdb, $wp_version;
 define("GTabberTable", $wpdb->prefix . "gtabber");
-define("WP_gtabber_UNIQUE_NAME", "wp-tabber-widget");
-define("WP_gtabber_TITLE", "Wp tabber widget");
 define('WP_gtabber_FAV', 'http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/');
-define('WP_gtabber_LINK', 'Check official website for more information <a target="_blank" href="'.WP_gtabber_FAV.'">click here</a>');
+
+if ( ! defined( 'WP_gtabber_BASENAME' ) )
+	define( 'WP_gtabber_BASENAME', plugin_basename( __FILE__ ) );
+	
+if ( ! defined( 'WP_gtabber_PLUGIN_NAME' ) )
+	define( 'WP_gtabber_PLUGIN_NAME', trim( dirname( WP_gtabber_BASENAME ), '/' ) );
+	
+if ( ! defined( 'WP_gtabber_PLUGIN_URL' ) )
+	define( 'WP_gtabber_PLUGIN_URL', WP_PLUGIN_URL . '/' . WP_gtabber_PLUGIN_NAME );
+	
+if ( ! defined( 'WP_gtabber_ADMIN_URL' ) )
+	define( 'WP_gtabber_ADMIN_URL', get_option('siteurl') . '/wp-admin/options-general.php?page=wp-tabber-widget' );
 
 // Main method to load tabber widget
 function GTabber()
@@ -125,7 +134,7 @@ function GTabber_install()
 		$sSql = $sSql . "`gtabber_extra2` int( 11 ) NOT NULL default '0' ,";
 		$sSql = $sSql . "`gtabber_expiration` datetime NOT NULL default '0000-00-00 00:00:00' ,";
 		$sSql = $sSql . "PRIMARY KEY ( `gtabber_id` )";
-		$sSql = $sSql . ")";
+		$sSql = $sSql . ") ENGINE=MyISAM  DEFAULT CHARSET=utf8;";
 		$wpdb->query($sSql);
 		
 		$IsSql = "INSERT INTO `". GTabberTable . "` (`gtabber_text`, `gtabber_group`)"; 
@@ -183,7 +192,8 @@ function GTabber_add_to_menu()
 {
 	if (is_admin()) 
 	{
-		add_options_page('Wp tabber widget', 'Wp tabber widget', 'manage_options', 'wp-tabber-widget', 'GTabber_admin' );
+		add_options_page( __('Wp tabber widget', 'wp-tabber-widget'), 
+				__('Wp tabber widget', 'wp-tabber-widget'), 'manage_options', 'wp-tabber-widget', 'GTabber_admin' );
 	}
 }
 
@@ -193,8 +203,8 @@ function GTabber_add_javascript_files()
 	if (!is_admin())
 	{
 		wp_enqueue_script('jquery');
-		wp_enqueue_style( 'Gtabber', get_option('siteurl').'/wp-content/plugins/wp-tabber-widget/inc/Gtabber.css');
-		wp_enqueue_script( 'tabber', get_option('siteurl').'/wp-content/plugins/wp-tabber-widget/inc/Gtabber.js', '', '1.0', true);
+		wp_enqueue_style( 'Gtabber', WP_gtabber_PLUGIN_URL.'/inc/Gtabber.css');
+		wp_enqueue_script( 'tabber', WP_gtabber_PLUGIN_URL.'/inc/Gtabber.js', '', '1.0', true);
 	}
 }   
 
@@ -203,16 +213,16 @@ function GTabber_control()
 {
 	$GTabber_Left = get_option('GTabber_Left');
 	$GTabber_Right = get_option('GTabber_Right');
-	if (@$_POST['GTabber_Submit']) 
+	if (isset($_POST['GTabber_Submit'])) 
 	{
 		$GTabber_Left = $_POST['GTabber_Left'];
 		$GTabber_Right = $_POST['GTabber_Right'];
 		update_option('GTabber_Left', $GTabber_Left );
 		update_option('GTabber_Right', $GTabber_Right );
 	}
-	echo '<p>Group 1:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Group 1:', 'wp-tabber-widget').'<br><input  style="width: 200px;" type="text" value="';
 	echo $GTabber_Left . '" name="GTabber_Left" id="GTabber_Left" /></p>';
-	echo '<p>Group 2:<br><input  style="width: 200px;" type="text" value="';
+	echo '<p>'.__('Group 2:', 'wp-tabber-widget').'<br><input  style="width: 200px;" type="text" value="';
 	echo $GTabber_Right . '" name="GTabber_Right" id="GTabber_Right" /></p>';
 	echo '<input type="hidden" id="GTabber_Submit" name="GTabber_Submit" value="1" />';
 }
@@ -233,14 +243,20 @@ function GTabber_init()
 {
 	if(function_exists('wp_register_sidebar_widget')) 
 	{
-		wp_register_sidebar_widget('Wp tabber widget', 'Wp tabber widget', 'GTabber_widget');
+		wp_register_sidebar_widget( __('Wp tabber widget', 'wp-tabber-widget'), __('Wp tabber widget', 'wp-tabber-widget'), 'GTabber_widget');
 	}
 	if(function_exists('wp_register_widget_control')) 
 	{
-		wp_register_widget_control('Wp tabber widget', array('Wp tabber widget', 'widgets'), 'GTabber_control');
+		wp_register_widget_control( __('Wp tabber widget', 'wp-tabber-widget'), array( __('Wp tabber widget', 'wp-tabber-widget'), 'widgets'), 'GTabber_control');
 	} 
 }
 
+function GTabber_textdomain() 
+{
+	  load_plugin_textdomain( 'wp-tabber-widget', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+}
+
+add_action('plugins_loaded', 'GTabber_textdomain');
 add_action('admin_menu', 'GTabber_add_to_menu');
 add_action("plugins_loaded", "GTabber_init");
 add_action('wp_enqueue_scripts', 'GTabber_add_javascript_files');
