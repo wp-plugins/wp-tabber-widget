@@ -2,8 +2,8 @@
 /*
 Plugin Name: Wp tabber widget
 Description: This is a jquery based lightweight plugin to create tab in the wordpress widget.
-Author: Gopi.R
-Version: 2.1
+Author: Gopi Ramasamy
+Version: 2.2
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Donate link: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
@@ -230,12 +230,7 @@ function GTabber_control()
 /*Method to load tabber widget*/
 function GTabber_widget($args) 
 {
-	//extract($args);
-	//echo $before_widget . $before_title;
-	//echo "Widget Title";
-	//echo $after_title;
 	GTabber();
-	//echo $after_widget;
 }
 
 /*Method to initiate sidebar widget & control*/

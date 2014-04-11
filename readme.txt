@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wor
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 3.8
-Stable tag: 2.1
+Tested up to: 3.9
+Stable tag: 2.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -66,6 +66,11 @@ New admin layout.
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (wp-tabber-widget.po) available in the languages folder.	
 
+= 2.2 =	
+
+1. Tested up to 3.8
+2. Small security update.
+
 == Changelog ==
 
 = 1.0 =		
@@ -83,3 +88,8 @@ New admin layout.
 1. Tested up to 3.8
 2. Now this plugin supports localization (or internationalization). i.e. option to translate into other languages. 
 Plugin *.po file (wp-tabber-widget.po) available in the languages folder.
+
+= 2.2 =	
+
+1. Tested up to 3.8
+2. Small security update.
