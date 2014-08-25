@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Wp tabber widget\n"
-"POT-Creation-Date: 2014-02-08 21:28+0800\n"
-"PO-Revision-Date: 2014-02-08 21:28+0800\n"
+"POT-Creation-Date: 2014-08-02 23:25+0800\n"
+"PO-Revision-Date: 2014-08-02 23:25+0800\n"
 "Last-Translator: \n"
 "Language-Team: www.gopiplus.com <www.gopiplus.com>\n"
 "MIME-Version: 1.0\n"
@@ -14,9 +14,9 @@ msgstr ""
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../wp-tabber-widget.php:195 ../wp-tabber-widget.php:196
-#: ../wp-tabber-widget.php:246 ../wp-tabber-widget.php:250
-#: ../pages/content-add.php:82 ../pages/content-edit.php:105
-#: ../pages/content-show.php:52
+#: ../wp-tabber-widget.php:241 ../wp-tabber-widget.php:245
+#: ../pages/content-add.php:83 ../pages/content-edit.php:106
+#: ../pages/content-show.php:53
 msgid "Wp tabber widget"
 msgstr ""
 
@@ -28,130 +28,130 @@ msgstr ""
 msgid "Group 2:"
 msgstr ""
 
-#: ../pages/content-add.php:25 ../pages/content-edit.php:53
+#: ../pages/content-add.php:26 ../pages/content-edit.php:54
 msgid "Please enter tabber text."
 msgstr ""
 
-#: ../pages/content-add.php:32 ../pages/content-edit.php:60
+#: ../pages/content-add.php:33 ../pages/content-edit.php:61
 msgid "Please select existing group (or) enter new tabber group."
 msgstr ""
 
-#: ../pages/content-add.php:48
+#: ../pages/content-add.php:49
 msgid "New details was successfully added."
 msgstr ""
 
-#: ../pages/content-add.php:74 ../pages/content-edit.php:97
+#: ../pages/content-add.php:75 ../pages/content-edit.php:98
 msgid "Click here to view the details"
 msgstr ""
 
-#: ../pages/content-add.php:84
+#: ../pages/content-add.php:85
 msgid "Add details"
 msgstr ""
 
-#: ../pages/content-add.php:86 ../pages/content-edit.php:109
-#: ../pages/content-show.php:67 ../pages/content-show.php:75
+#: ../pages/content-add.php:87 ../pages/content-edit.php:110
+#: ../pages/content-show.php:68 ../pages/content-show.php:76
 msgid "Tabber group"
 msgstr ""
 
-#: ../pages/content-add.php:88 ../pages/content-edit.php:111
+#: ../pages/content-add.php:89 ../pages/content-edit.php:112
 msgid "Please select (or) enter new"
 msgstr ""
 
-#: ../pages/content-add.php:103 ../pages/content-edit.php:126
+#: ../pages/content-add.php:104 ../pages/content-edit.php:127
 msgid "Select existing group (or) enter new tabber group"
 msgstr ""
 
-#: ../pages/content-add.php:105 ../pages/content-edit.php:128
+#: ../pages/content-add.php:106 ../pages/content-edit.php:129
 msgid "Tabber text"
 msgstr ""
 
-#: ../pages/content-add.php:107 ../pages/content-edit.php:130
+#: ../pages/content-add.php:108 ../pages/content-edit.php:131
 msgid "Please enter your tabber content."
 msgstr ""
 
-#: ../pages/content-add.php:109 ../pages/content-edit.php:132
+#: ../pages/content-add.php:110 ../pages/content-edit.php:133
 msgid "Link"
 msgstr ""
 
-#: ../pages/content-add.php:111 ../pages/content-edit.php:134
+#: ../pages/content-add.php:112 ../pages/content-edit.php:135
 msgid "When someone clicks on the message, where do you want to send them."
 msgstr ""
 
-#: ../pages/content-add.php:113 ../pages/content-edit.php:136
+#: ../pages/content-add.php:114 ../pages/content-edit.php:137
 msgid "Target"
 msgstr ""
 
-#: ../pages/content-add.php:120 ../pages/content-edit.php:143
+#: ../pages/content-add.php:121 ../pages/content-edit.php:144
 msgid "Do you want to open link in new window?"
 msgstr ""
 
-#: ../pages/content-add.php:125
+#: ../pages/content-add.php:126
 msgid "Insert Details"
 msgstr ""
 
-#: ../pages/content-add.php:126 ../pages/content-edit.php:150
+#: ../pages/content-add.php:127 ../pages/content-edit.php:151
 msgid "Cancel"
 msgstr ""
 
-#: ../pages/content-add.php:127 ../pages/content-edit.php:151
-#: ../pages/content-show.php:118
+#: ../pages/content-add.php:128 ../pages/content-edit.php:152
+#: ../pages/content-show.php:119
 msgid "Help"
-msgstr ""
-
-#: ../pages/content-add.php:133 ../pages/content-edit.php:157
-#: ../pages/content-show.php:127
-msgid "Check official website for more information"
 msgstr ""
 
 #: ../pages/content-add.php:134 ../pages/content-edit.php:158
 #: ../pages/content-show.php:128
+msgid "Check official website for more information"
+msgstr ""
+
+#: ../pages/content-add.php:135 ../pages/content-edit.php:159
+#: ../pages/content-show.php:129
 msgid "click here"
 msgstr ""
 
-#: ../pages/content-edit.php:16 ../pages/content-show.php:22
+#: ../pages/content-edit.php:17 ../pages/content-show.php:23
 msgid "Oops, selected details doesnt exist."
 msgstr ""
 
-#: ../pages/content-edit.php:107
+#: ../pages/content-edit.php:108
 msgid "Update details"
 msgstr ""
 
-#: ../pages/content-edit.php:149
+#: ../pages/content-edit.php:150
 msgid "Update Details"
 msgstr ""
 
-#: ../pages/content-show.php:40
+#: ../pages/content-show.php:41
 msgid "Selected record was successfully deleted."
 msgstr ""
 
-#: ../pages/content-show.php:53 ../pages/content-show.php:116
+#: ../pages/content-show.php:54 ../pages/content-show.php:117
 msgid "Add New"
 msgstr ""
 
-#: ../pages/content-show.php:66 ../pages/content-show.php:74
+#: ../pages/content-show.php:67 ../pages/content-show.php:75
 msgid "Text"
 msgstr ""
 
-#: ../pages/content-show.php:68 ../pages/content-show.php:76
+#: ../pages/content-show.php:69 ../pages/content-show.php:77
 msgid "Link target"
 msgstr ""
 
-#: ../pages/content-show.php:91
+#: ../pages/content-show.php:92
 msgid "Edit"
 msgstr ""
 
-#: ../pages/content-show.php:92
+#: ../pages/content-show.php:93
 msgid "Delete"
 msgstr ""
 
-#: ../pages/content-show.php:106
+#: ../pages/content-show.php:107
 msgid "No records available."
 msgstr ""
 
-#: ../pages/content-show.php:122
+#: ../pages/content-show.php:123
 msgid "Plugin configuration option"
 msgstr ""
 
-#: ../pages/content-show.php:124
+#: ../pages/content-show.php:125
 msgid "Drag and drop the widget to your sidebar."
 msgstr ""
