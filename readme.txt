@@ -5,8 +5,8 @@ Author URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wor
 Plugin URI: http://www.gopiplus.com/work/2012/11/10/tabber-widget-plugin-for-wordpress/
 Tags:  Tabber, Widget, Plugin
 Requires at least: 3.4
-Tested up to: 4.1
-Stable tag: 2.4
+Tested up to: 4.2.2
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	
@@ -79,6 +79,10 @@ Plugin *.po file (wp-tabber-widget.po) available in the languages folder.
 
 1. Tested up to 4.1
 
+= 2.5 =
+
+1. Tested up to 4.2.2
+
 == Changelog ==
 
 = 1.0 =		
@@ -109,3 +113,7 @@ Plugin *.po file (wp-tabber-widget.po) available in the languages folder.
 = 2.4 =
 
 1. Tested up to 4.1
+
+= 2.5 =
+
+1. Tested up to 4.2.2
